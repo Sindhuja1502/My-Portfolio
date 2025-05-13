@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/48958cd2c8.js" crossorigin="anonymous"></script>
 </head>
 <body>
    <div id="header">
@@ -47,7 +48,7 @@
                         <li><span>App Development</span><br>Designing web/app interfaces</li>
                     </ul>
                 </div>
-                div class="tab-contents" id="experience">
+                <div class="tab-contents" id="experience">
                     <ul>
                         <li><span>Frontend</span><br>Designing web/app interfaces</li>
                         <li><span>Web Development</span><br>Designing web/app interfaces</li>
@@ -65,16 +66,56 @@
         </div>
     </div>
    </div>
-   <script>
+<!------------------------------SERVICES---------------------------->>
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eveniet numquam quidem repudiandae. Architecto debitis delectus praesentium beatae officia corporis repellendus, eum ea! Ut autem, veniam exercitationem modi tenetur qui!</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>UI/UX Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eveniet numquam quidem repudiandae. Architecto debitis delectus praesentium beatae officia corporis repellendus, eum ea! Ut autem, veniam exercitationem modi tenetur qui!</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                
+                <i class="fa-brands fa-app-store"></i>
+                <h2>App Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eveniet numquam quidem repudiandae. Architecto debitis delectus praesentium beatae officia corporis repellendus, eum ea! Ut autem, veniam exercitationem modi tenetur qui!</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ---------------------------portfolio--------------------- -->
+ <div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                
+            </div>
+        </div>
+    </div>
+ </div>
+   <script>  /*FOR ABOUT>SKILLS,EDUCATION,EXP HOVER EFFECT*/
     var tablinks=document.getElementsByClassName("tab-links");
     var tabcontents=document.getElementsByClassName("tab-contents");
     function opentab(tabname){
-        for(tablink of tablinks){
+        for(tablink of tablinks){  /* when we click on skills that related info(tabcontents) and underline(tablink) below it is removed */
             tablink.classList.remove("active-link");
         }
-        for(tabcontent of tabcontents){
-            tablink.classList.remove("active-tab");
+        for(tabcontent of tabcontents){/*tabcontents of skills is gone when hovered^*/
+            tabcontent.classList.remove("active-tab");
         }
+        event.currentTarget.classList.add("active-link");/*when hovered on skiils,exp,edu that underlined hover effect is displayed*/
+        document.getElementById(tabname).classList.add("active-tab");/*related info when clicked on skills,edu,exp is displayed ,CALLS FUNCTION OPENTAB(TABNAME)*/
     }
    </script>
 </body>

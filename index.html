@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div id="header">
+     <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>JUNIOR FRONTEND DEVELOPER</p>
+            <h1>Hello,I'm<span> Sindhuja Reddy</span></h1>
+        </div>
+     </div>
+    </div>
+   <!-- ---------------about----------------- -->
+   <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/mypic2.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="subtitle">About me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptate numquam doloremque accusamus, eum quasi velit similique suscipit inventore laborum? Distinctio adipisci eos corporis dolore animi enim ipsum mollitia expedita!</p>
+                <div class="tabtitles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p> 
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Frontend</span><br>Designing web/app interfaces</li>
+                        <li><span>Web Development</span><br>Designing web/app interfaces</li>
+                        <li><span>App Development</span><br>Designing web/app interfaces</li>
+                    </ul>
+                </div>
+                div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Frontend</span><br>Designing web/app interfaces</li>
+                        <li><span>Web Development</span><br>Designing web/app interfaces</li>
+                        <li><span>App Development</span><br>Designing web/app interfaces</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022-2026</span><br>Under-Graduate</li>
+                        <li><span>2020-2022</span><br>Intermediate</li>
+                        <li><span>2019</span><br>Tenth Standard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   <script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tablink.classList.remove("active-tab");
+        }
+    }
+   </script>
+</body>
+</html>

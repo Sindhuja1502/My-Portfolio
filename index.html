@@ -12,13 +12,15 @@
      <div class="container">
         <nav>
             <img src="images/logo.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i></li>
             </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
             <p>JUNIOR FRONTEND DEVELOPER</p>
@@ -31,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="images/mypic2.jpg">
+                <img src="https://res.cloudinary.com/drgd1r7ik/image/upload/v1747839100/mypic2_xwp6ov.jpg">
             </div>
             <div class="about-col-2">
                 <h1 class="subtitle">About me</h1>
@@ -43,23 +45,23 @@
                 </div>
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
-                        <li><span>Frontend</span><br>Designing web/app interfaces</li>
-                        <li><span>Web Development</span><br>Designing web/app interfaces</li>
-                        <li><span>App Development</span><br>Designing web/app interfaces</li>
+                        <li><span>Frontend Development</span><br>HTML,CSS,Java Script,React JS,Git,Github</li>
+                        <li><span>CS Subjects</span><br>OOPs Concepts,Computer Networks,Operating System</li>
+                        <li><span>Programming</span><br>Java,Python(familiar)</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="experience">
                     <ul>
-                        <li><span>Frontend</span><br>Designing web/app interfaces</li>
-                        <li><span>Web Development</span><br>Designing web/app interfaces</li>
-                        <li><span>App Development</span><br>Designing web/app interfaces</li>
+                        <li><span>Executive Board Member</span><br>IoT esSENSE</li>
+                        <!-- <li><span>Web Development</span><br>Designing web/app interfaces</li>
+                        <li><span>App Development</span><br>Designing web/app interfaces</li> -->
                     </ul>
                 </div>
                 <div class="tab-contents" id="education">
                     <ul>
-                        <li><span>2022-2026</span><br>Under-Graduate</li>
-                        <li><span>2020-2022</span><br>Intermediate</li>
-                        <li><span>2019</span><br>Tenth Standard</li>
+                        <li><span>2022-2026</span><br>Under-Graduate<br>CGPA:8.88</li>
+                        <li><span>2020-2022</span><br>Intermediate<br>MARKS:961/1000</li>
+                        <li><span>2019</span><br>Tenth Standard<br>GPA:10</li>
                     </ul>
                 </div>
             </div>
@@ -99,10 +101,67 @@
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
             <div class="work">
-                
+                <img src="images/pic2.jpg">
+                <div class="layer">
+                    <h3>A Novel-Time Food Recommender System</h3>
+                    <p>A website which is used to give personalized food recommendations to users and connects the people with same preferences in food!
+                    </p>
+                    <a href="#"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+                </div>
+
+            </div>
+            <div class="work">
+                <img src="images/pic2.jpg">
+                <div class="layer">
+                    <h3>Music app</h3>
+                    <p>The app conects you to the talented people around the world.
+                        Download it from playstore.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/pic2.jpg">
+                <div class="layer">
+                    <h3>Online shopping app</h3>
+                    <p>The app conects you to the talented people around the world.
+                        Download it from playstore.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+                </div>
             </div>
         </div>
+        <a href="#" class="btn">See more</a>
     </div>
+    <!-- --------------------------------CONTACT----------------------------- -->
+     <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub=title">Contact me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>alalasindhujareddy@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+91 79*******0</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>   <!--you can give your linkedin acc link in href -->
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="" class="btn btn2">Download CV</a>  <!--if you wanna post your resume give path here at href and after link" write download class=btn btn2 -->
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>COpyright Sindhu<i class="fa-regular fa-heart"></i>.Used basic html,css,js</p>
+        </div>
+     </div>
  </div>
    <script>  /*FOR ABOUT>SKILLS,EDUCATION,EXP HOVER EFFECT*/
     var tablinks=document.getElementsByClassName("tab-links");
@@ -118,5 +177,31 @@
         document.getElementById(tabname).classList.add("active-tab");/*related info when clicked on skills,edu,exp is displayed ,CALLS FUNCTION OPENTAB(TABNAME)*/
     }
    </script>
+   <script> /*used for onlick menu and close icons using js*/
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        sidemenu.style.right="-200px";
+    }
+   </script>
+   <script>    /*form to google sheet from github */
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzgHTi1mYLXc_Z2HTSP7AVI4CrXYhCffobIc3DndgUZX2egOuGZrKWI0p3Q1CXeboUDYg/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg=document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {msg.innerHTML="Message sent successfully"    /*used to display this msg when the form in contact section is filled*/
+      setTimeout(function(){4
+        msg.innerHTML=""
+      },5000)
+      form.reset()   /*resets form after once submitted */
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>

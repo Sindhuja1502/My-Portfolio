@@ -39,9 +39,9 @@
                 <h1 class="subtitle">About me</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptate numquam doloremque accusamus, eum quasi velit similique suscipit inventore laborum? Distinctio adipisci eos corporis dolore animi enim ipsum mollitia expedita!</p>
                 <div class="tabtitles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p> 
+                    <p class="tab-links active-link" onclick="opentab('skills',event)">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience',event)">Experience</p>
+                    <p class="tab-links" onclick="opentab('education',event)">Education</p> 
                 </div>
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
@@ -163,45 +163,6 @@
         </div>
      </div>
  </div>
-   <script>  /*FOR ABOUT>SKILLS,EDUCATION,EXP HOVER EFFECT*/
-    var tablinks=document.getElementsByClassName("tab-links");
-    var tabcontents=document.getElementsByClassName("tab-contents");
-    function opentab(tabname){
-        for(tablink of tablinks){  /* when we click on skills that related info(tabcontents) and underline(tablink) below it is removed */
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){/*tabcontents of skills is gone when hovered^*/
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");/*when hovered on skiils,exp,edu that underlined hover effect is displayed*/
-        document.getElementById(tabname).classList.add("active-tab");/*related info when clicked on skills,edu,exp is displayed ,CALLS FUNCTION OPENTAB(TABNAME)*/
-    }
-   </script>
-   <script> /*used for onlick menu and close icons using js*/
-    var sidemenu = document.getElementById("sidemenu");
-    function openmenu(){
-        sidemenu.style.right="0";
-    }
-    function closemenu(){
-        sidemenu.style.right="-200px";
-    }
-   </script>
-   <script>    /*form to google sheet from github */
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzgHTi1mYLXc_Z2HTSP7AVI4CrXYhCffobIc3DndgUZX2egOuGZrKWI0p3Q1CXeboUDYg/exec'
-  const form = document.forms['submit-to-google-sheet']
-  const msg=document.getElementById("msg")
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {msg.innerHTML="Message sent successfully"    /*used to display this msg when the form in contact section is filled*/
-      setTimeout(function(){4
-        msg.innerHTML=""
-      },5000)
-      form.reset()   /*resets form after once submitted */
-      })
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
+ <script src="script.js"></script>
 </body>
 </html>
